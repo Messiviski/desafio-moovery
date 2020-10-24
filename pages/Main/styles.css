@@ -1,0 +1,53 @@
+html {
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+  display: none;
+}
+
+
+#button-tr{
+  display:flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  padding: 10px 10vw;
+  margin-top: -1.1vw;
+}
+
+#button-tr .refresh-button{
+  border: 1px solid;
+  border-radius: 1.5vw;
+  color: #FFF;
+  
+  padding: 0.7vw 6.5vw;
+  margin-left: -7vw;
+
+  background-color: #0CCE6B;
+}
+
+#button-tr .back-button{
+  border: 1px solid;
+  border-radius: 1.5vw;
+  color: #FFF;
+  
+  padding: 0.7vw 7.5vw;
+  margin-right: -7vw;
+
+  background-color: #e22840;
+}
+
+#button-tr .refresh-button:hover{
+  text-decoration: none;
+
+  transition: 0.4s;
+  background-color: #0BC163;
+}
+
+#button-tr .back-button:hover{
+  text-decoration: none;
+
+  transition: 0.4s;
+  background-color: #d71d36;
+}

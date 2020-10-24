@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Desafio Moovery</title>
+    <meta charset="UTF-8">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Thumbnail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td id="first_name0"></td>
+            <td id="second_name0"></td>
+            <td id="user_age0"></td>
+            <td id="user_location0"></td>
+            <td>
+              <img src="" id="user_img0">
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">2</th>
+            <td id="first_name1"></td>
+            <td id="second_name1"></td>
+            <td id="user_age1"></td>
+            <td id="user_location1"></td>
+            <td>
+              <img src="" id="user_img1">
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">3</th>
+            <td id="first_name2"></td>
+            <td id="second_name2"></td>
+            <td id="user_age2"></td>
+            <td id="user_location2"></td>
+            <td>
+              <img src="" id="user_img2">
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">4</th>
+            <td id="first_name3"></td>
+            <td id="second_name3"></td>
+            <td id="user_age3"></td>
+            <td id="user_location3"></td>
+            <td>
+              <img src="" id="user_img3">
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">5</th>
+            <td id="first_name4"></td>
+            <td id="second_name4"></td>
+            <td id="user_age4"></td>
+            <td id="user_location4"></td>
+            <td>
+              <img src="" id="user_img4">
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">6</th>
+            <td id="first_name5"></td>
+            <td id="second_name5"></td>
+            <td id="user_age5"></td>
+            <td id="user_location5"></td>
+            <td>
+              <img src="" id="user_img5">
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">7</th>
+            <td id="first_name6"></td>
+            <td id="second_name6"></td>
+            <td id="user_age6"></td>
+            <td id="user_location6"></td>
+            <td>
+              <img src="" id="user_img6">
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">8</th>
+            <td id="first_name7"></td>
+            <td id="second_name7"></td>
+            <td id="user_age7"></td>
+            <td id="user_location7"></td>
+            <td>
+              <img src="" id="user_img7">
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">9</th>
+            <td id="first_name8"></td>
+            <td id="second_name8"></td>
+            <td id="user_age8"></td>
+            <td id="user_location8"></td>
+            <td>
+              <img src="" id="user_img8">
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">10</th>
+            <td id="first_name9"></td>
+            <td id="second_name9"></td>
+            <td id="user_age9"></td>
+            <td id="user_location9"></td>
+            <td>
+              <img src="" id="user_img9">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="button-tr">
+      
+      <a class="back-button" href="../Home/home.html">Voltar</a>
+      <a class="refresh-button" href="index.html">Atualizar</a>
+    </div>
+  </body>
+
+  <script>
+    const url = 'https://api.randomuser.me/?results=10';
+
+    function readJson() {
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro HTTP: " + response.status);
+                }
+                return response.json();
+            })
+            .then(json => {
+                this.response = json;
+                for (var i = 0; i < 10; i++){
+                  document.getElementById('first_name' + [i]).innerHTML = response.results[i].name.first;
+                  document.getElementById('second_name' + [i]).innerHTML = response.results[i].name.last;
+                  document.getElementById('user_age' + [i]).innerHTML = response.results[i].dob.age;
+                  document.getElementById('user_location'+ [i]).innerHTML = response.results[i].location.city;
+                  document.getElementById('user_img'+ [i]).src = response.results[i].picture.thumbnail;
+                }
+            })
+    }
+    readJson();
+  </script>
+</html>
