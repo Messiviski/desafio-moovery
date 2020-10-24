@@ -1,0 +1,25 @@
+#button-tr{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 10vw;
+  margin-top: -1.1vw;
+}
+
+#button-tr a{
+  border: 1px solid;
+  border-radius: 1.5vw;
+  color: #FFF;
+  
+  padding: 0.7vw 7.5vw;
+
+  background-color: #06d6a0;
+}
+
+#button-tr a:hover{
+  text-decoration: none;
+
+  transition: 0.4s;
+  background-color: #05B384;
+}
